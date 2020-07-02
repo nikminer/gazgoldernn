@@ -1,0 +1,52 @@
+$font: 'Noto Sans';
+$MainColor: #1FA123;
+@mixin animation {
+    transition: ease-in 0.2s all;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    span {
+        color: $MainColor;
+    }
+}
+
+h3 {
+    margin: 25px 15px;
+    span {
+        color: $MainColor;
+    }
+    font-size: 23px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    font-family: $font;
+    padding: 60px 20px;
+    margin: auto;
+    min-height: 400px;
+}
+
+.content>div {
+    width: 605px;
+}
+
+@media (max-width: 768px) {
+    h3 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .content>div {
+        width: 100%;
+    }
+}

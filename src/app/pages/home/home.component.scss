@@ -1,0 +1,309 @@
+$font: 'Noto Sans';
+$MainColor: #1FA123;
+@mixin animation {
+    transition: ease-in 0.2s all;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: $font;
+}
+
+h1 {
+    margin: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    span {
+        color: $MainColor;
+    }
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 27px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto;
+    font-family: $font;
+}
+
+.bigHeader {
+    h2 {
+        margin: 5px;
+        text-transform: uppercase;
+        span {
+            color: $MainColor;
+        }
+    }
+    width: 90%;
+}
+
+.slideshow {
+    width: 60vw;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    button {
+        position: absolute;
+        top: 50%;
+        background-color: #ffffffcc;
+        border: none;
+        font-size: 25px;
+        padding: 10px;
+        cursor: pointer;
+        @include animation();
+    }
+    button:hover {
+        color: $MainColor;
+    }
+    .leftbtn {
+        left: 0;
+    }
+    .rightbtn {
+        right: 0;
+    }
+}
+
+.mySlides {
+    width: 100%;
+    height: 40vw;
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .list {
+        width: 250px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        background-color: #ffffffcc;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: $font;
+        border-top-left-radius: 50px;
+    }
+}
+
+li {
+    padding: 5px;
+    list-style: none;
+    cursor: default;
+    @include animation();
+    font-size: 20px;
+}
+
+li:hover {
+    color: $MainColor;
+}
+
+li:before {
+    padding-right: 10px;
+    font-weight: bold;
+    color: black;
+    content: "\2714";
+    @include animation();
+}
+
+li:hover:before {
+    color: $MainColor;
+    content: "\2714";
+}
+
+.preeminencelist {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    div {
+        width: 30%;
+        li {
+            line-height: 30px;
+            min-height: 60px;
+        }
+    }
+}
+
+.choiselist {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    div {
+        width: 350px;
+        border: $MainColor 2px solid;
+        margin: 20px;
+        padding: 10px;
+        li {
+            line-height: 20px;
+            border-bottom: solid lightgray 1px;
+            padding: 15px;
+        }
+        li:last-child {
+            border: none;
+        }
+        li:before {
+            color: $MainColor;
+        }
+        .bad:hover {
+            color: red;
+        }
+        .bad:before {
+            color: red;
+            content: "\2716";
+        }
+        h2 {
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+        h3 {
+            margin-top: 5px;
+        }
+        h2,
+        h3 {
+            text-align: center;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    .block {
+        h2 {
+            text-align: center;
+        }
+    }
+    .slideshow {
+        width: 90vw;
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        button {
+            top: 55%;
+            font-size: 28px;
+            color: $MainColor;
+        }
+    }
+    li:before {
+        color: $MainColor;
+    }
+    .mySlides {
+        height: 70vw;
+    }
+    .preeminencelist {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+        div {
+            width: 75%;
+            margin-top: 20px;
+            li {
+                min-height: 35px;
+            }
+        }
+    }
+    .choiselist {
+        margin-top: 10px;
+        div {
+            width: 90%;
+            border-width: 3px;
+            margin: 20px;
+            padding: 10px;
+            li {
+                line-height: 23px;
+                border-width: 2px;
+            }
+        }
+        div:last-child {
+            li {
+                border-color: darkgrey;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .bigHeader {
+        width: 100%;
+    }
+    .slideshow {
+        width: 100vw;
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            top: 60%;
+        }
+    }
+    .mySlides {
+        width: 100%;
+        height: 70vw;
+        position: relative;
+        .list {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+            padding: 10px 40px;
+            border-top-left-radius: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+    .preeminencelist {
+        width: 100%;
+        div {
+            width: 85%;
+            margin-top: 30px;
+            li {
+                text-align: justify;
+            }
+        }
+    }
+    .choiselist {
+        width: 100%;
+        div {
+            width: 100%;
+            padding: 10px;
+            li {
+                padding: 10px 0;
+            }
+        }
+    }
+}

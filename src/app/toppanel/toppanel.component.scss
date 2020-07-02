@@ -1,0 +1,57 @@
+$BigSpan: 20px;
+$font: 'Noto Sans';
+$MainColor: #1FA123;
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 0;
+    font-family: $font;
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        span {
+            color: $MainColor;
+            font-size: $BigSpan;
+        }
+        .underlogo {
+            font-style: italic;
+        }
+        .Header {
+            padding: 5px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .telephone {
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            img {
+                height: 150px;
+            }
+            .underlogo {
+                margin-bottom: 15px;
+            }
+            .Header {
+                padding: 0px;
+            }
+        }
+    }
+}

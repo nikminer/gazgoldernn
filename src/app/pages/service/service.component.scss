@@ -1,0 +1,182 @@
+$font: 'Noto Sans';
+$MainColor: #1FA123;
+@mixin animation {
+    transition: ease-in 0.2s all;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    span {
+        color: $MainColor;
+    }
+}
+
+h3 {
+    margin: 15px;
+    span {
+        color: $MainColor;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    font-family: $font;
+    padding: 20px 20px;
+    margin: auto;
+}
+
+.content>div {
+    width: 80%;
+    margin: 30px 0;
+}
+
+img {
+    width: 45%;
+    float: right;
+    margin: 15px 25px;
+}
+
+img:nth-child(even) {
+    float: left;
+}
+
+p {
+    word-spacing: 10px;
+    text-align: justify;
+    text-indent: 20px;
+    margin: 30px 0;
+    line-height: 28px;
+}
+
+li {
+    padding: 20px 0;
+    word-spacing: 10px;
+}
+
+p,
+li {
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    cursor: default;
+    line-height: 28px;
+    @include animation();
+}
+
+li:hover {
+    color: $MainColor;
+}
+
+li:before {
+    padding-right: 10px;
+    font-weight: bold;
+    color: black;
+    content: "\2714";
+    @include animation();
+}
+
+li:hover:before {
+    color: $MainColor;
+    content: "\2714";
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    details {
+        summary {
+            background-color: $MainColor;
+            padding: 20px 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        cursor: pointer;
+        margin: 10px 0;
+        border: 1px solid lightgray;
+        p {
+            padding: 10px;
+            margin: 5px 10px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content>div {
+        width: 90%;
+        margin: 30px 0;
+    }
+    img {
+        width: 90%;
+        float: none;
+    }
+    img:nth-child(even) {
+        float: none;
+    }
+    p {
+        word-spacing: 5px;
+    }
+    li {
+        word-spacing: 5px;
+    }
+    li:before {
+        color: $MainColor;
+    }
+    .faqs {
+        details {
+            summary {
+                text-align: center;
+            }
+            margin: 10px 0;
+            border-width: 2px;
+            p {
+                margin: 5px 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .content>div {
+        width: 100%;
+        margin: 30px 0;
+    }
+    img {
+        width: 100%;
+        margin: 0;
+    }
+    p {
+        word-spacing: 5px;
+    }
+    li {
+        word-spacing: 5px;
+    }
+    li:before {
+        color: $MainColor;
+    }
+    .faqs {
+        width: 100%;
+        margin: 0;
+        details {
+            summary {
+                text-align: center;
+            }
+            margin: 0;
+            border-width: 2px;
+            p {
+                margin: 5px 0px;
+                font-size: 18px;
+            }
+        }
+    }
+}
