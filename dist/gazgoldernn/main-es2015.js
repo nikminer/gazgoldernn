@@ -138,7 +138,7 @@ class AppComponent {
     }
     submit() {
         let body = "name=" + this.myForm.value['Username'] + "&phone=" + this.myForm.value['Userphone'];
-        return this.http.post('http://u1091608.isp.regruhosting.ru/send_messages.php', body, { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded') })
+        return this.http.post('https://www.gazgoldernn.ru/send_messages.php', body, { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded') })
             .subscribe(status => {
             if (status == 1) {
                 alert("Звонок заказан, в ближайщее время с вами свяжутся");
